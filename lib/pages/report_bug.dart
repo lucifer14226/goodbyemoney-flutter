@@ -55,7 +55,8 @@ class _ReportBugContentState extends State<ReportBugContent> {
 
     final userFeedback = SentryUserFeedback(
       eventId: sentryId,
-      comments: '''
+      comments:
+          '''
         Title: $title
         ==============================================
         What Happened: $whatHappened
@@ -118,23 +119,6 @@ class _ReportBugContentState extends State<ReportBugContent> {
                       labelText: "What Happened",
                       border: OutlineInputBorder(),
                     ),
-                  ),
-                ),
-              ],
-            ),
-            CupertinoFormSection.insetGrouped(
-              margin: const EdgeInsets.fromLTRB(16, 16, 16, 0),
-              children: [
-                CupertinoFormRow(
-                  helper: null,
-                  padding: const EdgeInsets.symmetric(vertical: 8),
-                  child: TextFormField(
-                    maxLines: 5,
-                    controller: _titleController,
-                    decoration: const InputDecoration(
-                      labelText: "What should have happened",
-                      border: OutlineInputBorder(),
-                    )
                   ),
                 ),
               ],
