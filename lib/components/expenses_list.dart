@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-
+import 'package:flutter/material.dart';
 import 'package:goodbye_money/components/day_expenses.dart';
 import 'package:goodbye_money/extensions/date_extensions.dart';
 import 'package:goodbye_money/models/expense.dart';
@@ -30,7 +30,7 @@ class ExpensesList extends StatelessWidget {
   Widget build(BuildContext context) {
     var displayedExpenses = _computeExpenses(expenses);
 
-    return CupertinoScrollbar(
+    return Scrollbar(
       child: ListView.builder(
         scrollDirection: Axis.vertical,
         shrinkWrap: true,

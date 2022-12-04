@@ -1,39 +1,55 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import './pages/expenses.dart';
 import './pages/reports.dart';
 import './pages/add.dart';
 import './pages/settings.dart';
-import './types/widgets.dart';
 
-class TabsController extends StatefulWidget {
-  const TabsController({super.key});
+
+class Navigation extends StatefulWidget {
+  const Navigation({Key? key}) : super(key: key);
 
   @override
-  State<TabsController> createState() => _TabsControllerState();
+  State<Navigation> createState() => _Navigation();
 }
 
-class _TabsControllerState extends State<TabsController> {
-  var _selectedIndex = 0;
+class _Navigation extends State<Navigation> with TickerProviderStateMixin {
+  PageController pageController = PageController(
+    initialPage: 0,
+  );
+  // late TabController _tabController;
 
-  static const List<WidgetWithTitle> _pages = [
-    Expenses(),
-    Reports(),
-    Add(),
-    Settings(),
-  ];
+  int _selectedIndex = 0;
 
-  void _onItemTapped(int index) {
+  void onTapped(int index) {
     setState(() {
       _selectedIndex = index;
+      pageController.animateToPage(index,
+          duration: const Duration(milliseconds: 10), curve: Curves.bounceIn);
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    return CupertinoTabScaffold(
-        tabBar: CupertinoTabBar(
-          backgroundColor: const Color.fromARGB(255, 0, 0, 0),
-          items: const <BottomNavigationBarItem>[
+    return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 0, 0, 0),
+      body: PageView(
+        physics: const NeverScrollableScrollPhysics(),
+        controller: pageController,
+        onPageChanged: (val) {
+          onTapped(val);
+        },
+        children: const [
+          // const MainChatScreen(),
+          Expenses(),
+          Reports(),
+          Add(),
+          Settings(),
+        ],
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        unselectedItemColor: Colors.grey,
+        items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
               icon: Icon(CupertinoIcons.tray_arrow_up),
               label: 'Expenses',
@@ -51,15 +67,10 @@ class _TabsControllerState extends State<TabsController> {
               label: 'Settings',
             ),
           ],
-          currentIndex: _selectedIndex,
-          onTap: _onItemTapped,
-        ),
-        tabBuilder: (BuildContext context, int index) {
-          return CupertinoTabView(
-            builder: (BuildContext context) {
-              return _pages[index];
-            },
-          );
-        });
+        currentIndex: _selectedIndex,
+        selectedItemColor: Colors.white,
+        onTap: onTapped,
+      ),
+    );
   }
 }

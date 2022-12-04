@@ -1,7 +1,7 @@
 // ignore_for_file: library_private_types_in_public_api
 
 import 'dart:async';
-
+import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:goodbye_money/components/charts/monthly_chart.dart';
 import 'package:goodbye_money/components/charts/weekly_chart.dart';
@@ -12,7 +12,7 @@ import 'package:goodbye_money/constants.dart';
 import 'package:goodbye_money/extensions/date_extensions.dart';
 import 'package:goodbye_money/extensions/expenses_extensions.dart';
 import 'package:goodbye_money/extensions/number_extensions.dart';
-import 'package:goodbye_money/mock/mock_expenses.dart';
+
 import 'package:goodbye_money/models/expense.dart';
 import 'package:goodbye_money/realm.dart';
 import 'package:goodbye_money/types/period.dart';
@@ -104,8 +104,8 @@ class _ReportsContent extends State<ReportsContent> {
       setStateValues(_controller.page!.toInt());
     });
 
-    return CupertinoPageScaffold(
-      navigationBar: CupertinoNavigationBar(
+    return Scaffold(
+      appBar: CupertinoNavigationBar(
         backgroundColor: const Color.fromARGB(0, 0, 0, 0),
         middle: const Text("Reports"),
         trailing: CupertinoButton(
@@ -135,7 +135,7 @@ class _ReportsContent extends State<ReportsContent> {
           ),
         ),
       ),
-      child: SafeArea(
+      body: SafeArea(
         left: true,
         top: true,
         right: true,

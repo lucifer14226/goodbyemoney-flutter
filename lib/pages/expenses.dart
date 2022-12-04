@@ -1,6 +1,6 @@
 // ignore_for_file: library_private_types_in_public_api, depend_on_referenced_packages
 import 'dart:async';
-
+import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:collection/collection.dart';
 
@@ -62,12 +62,12 @@ class _ExpensesContent extends State<ExpensesContent> {
       });
     });
 
-    return CupertinoPageScaffold(
-      navigationBar: const CupertinoNavigationBar(
+    return Scaffold(
+      appBar: const CupertinoNavigationBar(
         backgroundColor: Color.fromARGB(0, 0, 0, 0),
         middle: Text("Expenses"),
       ),
-      child: SafeArea(
+      body: SafeArea(
         left: true,
         top: true,
         right: true,

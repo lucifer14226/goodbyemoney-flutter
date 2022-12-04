@@ -1,6 +1,6 @@
 // ignore_for_file: library_private_types_in_public_api
 import 'dart:async';
-
+import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flex_color_picker/flex_color_picker.dart';
 import 'package:goodbye_money/models/category.dart';
@@ -46,15 +46,15 @@ class _CategoriesState extends State<Categories> {
 
   @override
   Widget build(BuildContext context) {
-    return CupertinoPageScaffold(
-        navigationBar: CupertinoNavigationBar(
+    return Scaffold(
+        appBar: CupertinoNavigationBar(
           leading: CupertinoNavigationBarBackButton(
               onPressed: () => Navigator.pop(context)),
           middle: const Text("Categories",
               style: TextStyle(color: Color.fromARGB(255, 255, 255, 255))),
           backgroundColor: const Color.fromARGB(255, 0, 0, 0),
         ),
-        child: Container(
+        body: Container(
           width: double.infinity,
           height: double.infinity,
           transformAlignment: Alignment.center,
@@ -190,10 +190,16 @@ class _CategoriesState extends State<Categories> {
                       Expanded(
                           child: Container(
                               margin: const EdgeInsets.only(right: 12),
-                              child: CupertinoTextField(
-                                placeholder: "Category name",
+                              child: TextField(
+                                obscureText: false,
+                                decoration: const InputDecoration(
+                                  border: OutlineInputBorder(),
+                                  labelText: "Category Name",
+                                ),
                                 controller: _textController,
-                              ))),
+                              ),
+                            ),
+                          ),
                       CupertinoButton(
                         onPressed: createCategory,
                         child: const Icon(CupertinoIcons.paperplane_fill),

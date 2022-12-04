@@ -1,5 +1,5 @@
 // ignore_for_file: library_private_types_in_public_api
-
+import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:goodbye_money/types/widgets.dart';
 import 'package:sentry_flutter/sentry_flutter.dart';
@@ -72,15 +72,15 @@ class _ReportBugContentState extends State<ReportBugContent> {
 
   @override
   Widget build(BuildContext context) {
-    return CupertinoPageScaffold(
-      navigationBar: CupertinoNavigationBar(
+    return Scaffold(
+      appBar: CupertinoNavigationBar(
         leading: CupertinoNavigationBarBackButton(
             onPressed: () => Navigator.pop(context)),
         middle: const Text("Report a bug",
             style: TextStyle(color: Color.fromARGB(255, 255, 255, 255))),
         backgroundColor: const Color.fromARGB(255, 0, 0, 0),
       ),
-      child: Container(
+      body: Container(
         width: double.infinity,
         height: double.infinity,
         transformAlignment: Alignment.center,
@@ -94,13 +94,12 @@ class _ReportBugContentState extends State<ReportBugContent> {
                 CupertinoFormRow(
                   helper: null,
                   padding: const EdgeInsets.symmetric(vertical: 8),
-                  child: CupertinoTextFormFieldRow(
-                    placeholder: "Title",
+                  child: TextFormField(
                     maxLines: 1,
                     controller: _titleController,
-                    decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 28, 28, 30),
-                      borderRadius: BorderRadius.circular(16),
+                    decoration: const InputDecoration(
+                      labelText: "Title",
+                      border: OutlineInputBorder(),
                     ),
                   ),
                 ),
@@ -112,13 +111,12 @@ class _ReportBugContentState extends State<ReportBugContent> {
                 CupertinoFormRow(
                   helper: null,
                   padding: const EdgeInsets.symmetric(vertical: 8),
-                  child: CupertinoTextFormFieldRow(
-                    placeholder: "What happened?",
+                  child: TextFormField(
                     maxLines: 5,
-                    controller: _whatHappenedController,
-                    decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 28, 28, 30),
-                      borderRadius: BorderRadius.circular(16),
+                    controller: _titleController,
+                    decoration: const InputDecoration(
+                      labelText: "What Happened",
+                      border: OutlineInputBorder(),
                     ),
                   ),
                 ),
@@ -130,14 +128,13 @@ class _ReportBugContentState extends State<ReportBugContent> {
                 CupertinoFormRow(
                   helper: null,
                   padding: const EdgeInsets.symmetric(vertical: 8),
-                  child: CupertinoTextFormFieldRow(
-                    placeholder: "What should've happened?",
+                  child: TextFormField(
                     maxLines: 5,
-                    controller: _whatShouldveHappenedController,
-                    decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 28, 28, 30),
-                      borderRadius: BorderRadius.circular(16),
-                    ),
+                    controller: _titleController,
+                    decoration: const InputDecoration(
+                      labelText: "What should have happened",
+                      border: OutlineInputBorder(),
+                    )
                   ),
                 ),
               ],
@@ -148,26 +145,24 @@ class _ReportBugContentState extends State<ReportBugContent> {
                 CupertinoFormRow(
                   helper: null,
                   padding: const EdgeInsets.symmetric(vertical: 8),
-                  child: CupertinoTextFormFieldRow(
-                    placeholder: "Name",
+                  child: TextFormField(
                     maxLines: 1,
-                    controller: _nameController,
-                    decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 28, 28, 30),
-                      borderRadius: BorderRadius.circular(16),
+                    controller: _titleController,
+                    decoration: const InputDecoration(
+                      labelText: "Name",
+                      border: OutlineInputBorder(),
                     ),
                   ),
                 ),
                 CupertinoFormRow(
                   helper: null,
                   padding: const EdgeInsets.symmetric(vertical: 8),
-                  child: CupertinoTextFormFieldRow(
-                    placeholder: "Email",
+                  child: TextFormField(
                     maxLines: 1,
-                    controller: _emailController,
-                    decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 28, 28, 30),
-                      borderRadius: BorderRadius.circular(16),
+                    controller: _titleController,
+                    decoration: const InputDecoration(
+                      labelText: "Email",
+                      border: OutlineInputBorder(),
                     ),
                   ),
                 ),

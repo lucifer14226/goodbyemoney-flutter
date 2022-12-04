@@ -27,16 +27,17 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return CupertinoApp(
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Expense Tracker',
-      theme: const CupertinoThemeData(
-          primaryColor: Color.fromARGB(255, 41, 141, 255),
+      theme: ThemeData(
+          primaryColor: const Color.fromARGB(255, 41, 141, 255),
           brightness: Brightness.dark),
       routes: {
         loginRoutes: (context) => const LoginView(),
         verifyemail: (context) => const VerifyEmailView(),
         registerRoutes: (context) => const RegisterView(),
-        tabRoute: (context) => const TabsController()
+        tabRoute: (context) => const Navigation()
       },
       home: const LoginView(),
     );

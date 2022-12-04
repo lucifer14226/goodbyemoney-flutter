@@ -1,6 +1,5 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/cupertino.dart';
-
 import 'package:goodbye_money/extensions/expenses_extensions.dart';
 import 'package:goodbye_money/models/expense.dart';
 import 'package:goodbye_money/utils/chart_utils.dart';

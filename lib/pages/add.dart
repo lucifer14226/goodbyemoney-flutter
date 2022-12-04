@@ -1,6 +1,6 @@
 // ignore_for_file: library_private_types_in_public_api
 import 'dart:async';
-
+import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:goodbye_money/constants.dart';
 import 'package:goodbye_money/models/category.dart';
@@ -84,12 +84,12 @@ class _AddContentState extends State<AddContent> {
       categories = event.results.toList();
     });
 
-    return CupertinoPageScaffold(
-      navigationBar: const CupertinoNavigationBar(
+    return Scaffold(
+      appBar: const CupertinoNavigationBar(
         backgroundColor: Color.fromARGB(0, 0, 0, 0),
         middle: Text("Add"),
       ),
-      child: SafeArea(
+      body: SafeArea(
         left: true,
         top: true,
         right: true,
@@ -115,8 +115,12 @@ class _AddContentState extends State<AddContent> {
                                 color: Color.fromARGB(255, 255, 255, 255))),
                         helper: null,
                         padding: const EdgeInsets.fromLTRB(16, 12, 16, 12),
-                        child: CupertinoTextField.borderless(
-                          placeholder: "Amount",
+                        child: TextField(
+                          obscureText: false,
+                          decoration: const InputDecoration(
+                            border: OutlineInputBorder(),
+                            labelText: "Amount",
+                          ),
                           controller: _amountController,
                           onChanged: (value) {
                             setState(() => canSubmit =
@@ -205,8 +209,12 @@ class _AddContentState extends State<AddContent> {
                                 color: Color.fromARGB(255, 255, 255, 255))),
                         helper: null,
                         padding: const EdgeInsets.fromLTRB(16, 12, 16, 12),
-                        child: CupertinoTextField.borderless(
-                          placeholder: "Note",
+                        child: TextField(
+                          obscureText: false,
+                          decoration: const InputDecoration(
+                            border: OutlineInputBorder(),
+                            labelText: "Note",
+                          ),
                           controller: _noteController,
                           textAlign: TextAlign.end,
                           textInputAction: TextInputAction.continueAction,
