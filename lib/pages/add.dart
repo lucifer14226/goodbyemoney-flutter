@@ -126,9 +126,7 @@ class _AddContentState extends State<AddContent> {
                             setState(() => canSubmit =
                                 categories.isNotEmpty && value.isNotEmpty);
                           },
-                          keyboardType: const TextInputType.numberWithOptions(
-                            decimal: true,
-                          ),
+                          keyboardType: TextInputType.number,
                           textAlign: TextAlign.end,
                           textInputAction: TextInputAction.continueAction,
                           style: const TextStyle(
