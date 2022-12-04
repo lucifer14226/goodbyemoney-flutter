@@ -31,6 +31,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  
+  
+  flutter_native_splash: ^2.2.7
 
   # The Sentry SDK dependency
   sentry_flutter: ^6.15.1

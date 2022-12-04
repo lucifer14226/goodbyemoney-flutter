@@ -131,6 +131,9 @@ class _AddContentState extends State<AddContent> {
                             color: Color.fromARGB(255, 255, 255, 255),
                             backgroundColor: Color.fromARGB(0, 0, 0, 0),
                           ),
+                          keyboardType: const TextInputType.numberWithOptions(
+                            decimal: true,
+                          ),
                         ),
                       ),
                     ),
