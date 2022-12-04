@@ -126,9 +126,7 @@ class _AddContentState extends State<AddContent> {
                             setState(() => canSubmit =
                                 categories.isNotEmpty && value.isNotEmpty);
                           },
-                          keyboardType: TextInputType.number,
                           textAlign: TextAlign.end,
-                          textInputAction: TextInputAction.continueAction,
                           style: const TextStyle(
                             color: Color.fromARGB(255, 255, 255, 255),
                             backgroundColor: Color.fromARGB(0, 0, 0, 0),
@@ -215,7 +213,6 @@ class _AddContentState extends State<AddContent> {
                           ),
                           controller: _noteController,
                           textAlign: TextAlign.end,
-                          textInputAction: TextInputAction.continueAction,
                           style: const TextStyle(
                             color: Color.fromARGB(255, 255, 255, 255),
                             backgroundColor: Color.fromARGB(0, 0, 0, 0),
