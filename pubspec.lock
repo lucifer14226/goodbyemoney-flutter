@@ -266,7 +266,7 @@ packages:
       name: firebase_auth
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "4.1.4"
+    version: "4.1.5"
   firebase_auth_platform_interface:
     dependency: transitive
     description:
@@ -322,25 +322,26 @@ packages:
       name: flex_color_picker
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.6.1"
+    version: "3.0.0"
   flex_seed_scheme:
     dependency: transitive
     description:
       name: flex_seed_scheme
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.1"
+    version: "1.1.0"
   flutter:
     dependency: "direct main"
     description: flutter
     source: sdk
     version: "0.0.0"
-  flutter_lints:
+  flutter_native_splash:
     dependency: "direct dev"
     description:
-      name: flutter_lints
+      name: flutter_native_splash
       url: "https://pub.dartlang.org"
     source: hosted
+<<<<<<< HEAD
     version: "2.0.1"
   flutter_native_splash:
     dependency: "direct main"
@@ -348,6 +349,8 @@ packages:
       name: flutter_native_splash
       url: "https://pub.dartlang.org"
     source: hosted
+=======
+>>>>>>> cfbae026ffc3273678fafbe25de0820f7010bfc4
     version: "2.2.16"
   flutter_test:
     dependency: "direct dev"
@@ -365,14 +368,14 @@ packages:
       name: frontend_server_client
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.1.0"
+    version: "3.2.0"
   glob:
     dependency: transitive
     description:
       name: glob
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.1.0"
+    version: "2.1.1"
   graphs:
     dependency: transitive
     description:
@@ -443,13 +446,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.7.0"
-  lints:
-    dependency: transitive
-    description:
-      name: lints
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "2.0.0"
   logging:
     dependency: transitive
     description:
@@ -484,7 +480,7 @@ packages:
       name: mime
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.2"
+    version: "1.0.3"
   objectid:
     dependency: transitive
     description:
@@ -554,7 +550,7 @@ packages:
       name: pub_semver
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.1.2"
+    version: "2.1.3"
   pubspec_parse:
     dependency: transitive
     description:
@@ -568,21 +564,21 @@ packages:
       name: realm
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.6.0+beta"
+    version: "0.8.0+rc"
   realm_common:
     dependency: transitive
     description:
       name: realm_common
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.6.0+beta"
+    version: "0.8.0+rc"
   realm_generator:
     dependency: transitive
     description:
       name: realm_generator
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.6.0+beta"
+    version: "0.8.0+rc"
   sane_uuid:
     dependency: transitive
     description:
@@ -596,14 +592,14 @@ packages:
       name: sentry
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "6.15.1"
+    version: "6.17.0"
   sentry_flutter:
     dependency: "direct main"
     description:
       name: sentry_flutter
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "6.15.1"
+    version: "6.17.0"
   shelf:
     dependency: transitive
     description:
@@ -617,7 +613,7 @@ packages:
       name: shelf_web_socket
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.2"
+    version: "1.0.3"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -657,7 +653,7 @@ packages:
       name: stream_transform
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.1"
+    version: "2.1.0"
   string_scanner:
     dependency: transitive
     description:
@@ -741,7 +737,11 @@ packages:
       name: win32
       url: "https://pub.dartlang.org"
     source: hosted
+<<<<<<< HEAD
     version: "3.1.1"
+=======
+    version: "3.1.2"
+>>>>>>> cfbae026ffc3273678fafbe25de0820f7010bfc4
   xml:
     dependency: transitive
     description:
