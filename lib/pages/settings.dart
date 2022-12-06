@@ -32,7 +32,10 @@ class Settings extends WidgetWithTitle {
     return Scaffold(
       appBar: const CupertinoNavigationBar(
         backgroundColor: Color.fromARGB(0, 0, 0, 0),
-        middle: Text("Settings"),
+        middle: Text(
+          "Settings",
+          style: const TextStyle(color: Colors.white),
+        ),
       ),
       body: SafeArea(
         left: true,

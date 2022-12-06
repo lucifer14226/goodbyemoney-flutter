@@ -87,7 +87,10 @@ class _AddContentState extends State<AddContent> {
     return Scaffold(
       appBar: const CupertinoNavigationBar(
         backgroundColor: Color.fromARGB(0, 0, 0, 0),
-        middle: Text("Add"),
+        middle: Text(
+          "Add",
+          style: const TextStyle(color: Colors.white),
+        ),
       ),
       body: SafeArea(
         left: true,
@@ -184,6 +187,7 @@ class _AddContentState extends State<AddContent> {
                               context,
                               CupertinoDatePicker(
                                 initialDateTime: _selectedDate,
+                                maximumDate: _selectedDate,
                                 mode: CupertinoDatePickerMode.dateAndTime,
                                 use24hFormat: true,
                                 // This is called when the user changes the time.
@@ -193,7 +197,7 @@ class _AddContentState extends State<AddContent> {
                               ),
                             ),
                             child: Text(
-                                '${_selectedDate.month}/${_selectedDate.day}/${_selectedDate.year} ${_selectedDate.hour}:${_selectedDate.minute}'),
+                                '${_selectedDate.day}/${_selectedDate.month}/${_selectedDate.year} ${_selectedDate.hour}:${_selectedDate.minute}'),
                           ),
                         ),
                       ),
