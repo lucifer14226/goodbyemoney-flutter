@@ -22,7 +22,7 @@ class ExpenseRow extends StatelessWidget {
                   fontWeight: FontWeight.w500,
                   fontSize: 17,
                 )),
-            Text("USD ${expense.amount.removeDecimalZeroFormat()}",
+            Text("INR ${expense.amount.removeDecimalZeroFormat()}",
                 style: const TextStyle(
                   fontWeight: FontWeight.w500,
                   fontSize: 17,

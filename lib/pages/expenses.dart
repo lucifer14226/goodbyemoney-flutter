@@ -115,7 +115,7 @@ class _ExpensesContent extends State<ExpensesContent> {
               children: <Widget>[
                 Container(
                   margin: const EdgeInsets.fromLTRB(0, 4, 4, 0),
-                  child: const Text("\$",
+                  child: const Text("₹",
                       style: TextStyle(
                         fontSize: 20,
                         color: CupertinoColors.inactiveGray,

@@ -60,7 +60,7 @@ class DayExpenses extends StatelessWidget {
                 ),
               ),
               Text(
-                "USD ${expenses.sum().removeDecimalZeroFormat()}",
+                "INR ${expenses.sum().removeDecimalZeroFormat()}",
                 style: const TextStyle(
                   color: CupertinoColors.inactiveGray,
                   fontWeight: FontWeight.w500,

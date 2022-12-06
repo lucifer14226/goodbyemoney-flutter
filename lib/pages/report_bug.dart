@@ -39,7 +39,6 @@ class _ReportBugContentState extends State<ReportBugContent> {
     super.initState();
     _titleController = TextEditingController(text: '');
     _whatHappenedController = TextEditingController(text: '');
-    _whatShouldveHappenedController = TextEditingController(text: '');
     _nameController = TextEditingController(text: '');
     _emailController = TextEditingController(text: '');
     lastReportedEventId = '';
@@ -48,20 +47,17 @@ class _ReportBugContentState extends State<ReportBugContent> {
   Future<void> sendFeedback() async {
     var title = _titleController.text;
     var whatHappened = _whatHappenedController.text;
-    var whatShouldveHappened = _whatShouldveHappenedController.text;
     var name = _nameController.text;
     var email = _emailController.text;
     var sentryId = Sentry.lastEventId;
 
     final userFeedback = SentryUserFeedback(
       eventId: sentryId,
-      comments:
-          '''
+      comments: '''
         Title: $title
         ==============================================
         What Happened: $whatHappened
         ==============================================
-        What Should've Happened: $whatShouldveHappened
       ''',
       email: email,
       name: name,
@@ -87,94 +83,96 @@ class _ReportBugContentState extends State<ReportBugContent> {
         transformAlignment: Alignment.center,
         padding: const EdgeInsets.fromLTRB(0, 16, 0, 16),
         color: const Color.fromARGB(255, 0, 0, 0),
-        child: Column(
-          children: [
-            CupertinoFormSection.insetGrouped(
-              margin: const EdgeInsets.symmetric(horizontal: 16),
-              children: [
-                CupertinoFormRow(
-                  helper: null,
-                  padding: const EdgeInsets.symmetric(vertical: 8),
-                  child: TextFormField(
-                    maxLines: 1,
-                    controller: _titleController,
-                    decoration: const InputDecoration(
-                      labelText: "Title",
-                      border: OutlineInputBorder(),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              CupertinoFormSection.insetGrouped(
+                margin: const EdgeInsets.symmetric(horizontal: 16),
+                children: [
+                  CupertinoFormRow(
+                    helper: null,
+                    padding: const EdgeInsets.symmetric(vertical: 8),
+                    child: TextFormField(
+                      maxLines: 1,
+                      controller: _titleController,
+                      decoration: const InputDecoration(
+                        labelText: "Title",
+                        border: OutlineInputBorder(),
+                      ),
                     ),
                   ),
-                ),
-              ],
-            ),
-            CupertinoFormSection.insetGrouped(
-              margin: const EdgeInsets.fromLTRB(16, 16, 16, 0),
-              children: [
-                CupertinoFormRow(
-                  helper: null,
-                  padding: const EdgeInsets.symmetric(vertical: 8),
-                  child: TextFormField(
-                    maxLines: 5,
-                    controller: _titleController,
-                    decoration: const InputDecoration(
-                      labelText: "What Happened",
-                      border: OutlineInputBorder(),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            CupertinoFormSection.insetGrouped(
-              margin: const EdgeInsets.fromLTRB(16, 16, 16, 0),
-              children: [
-                CupertinoFormRow(
-                  helper: null,
-                  padding: const EdgeInsets.symmetric(vertical: 8),
-                  child: TextFormField(
-                    maxLines: 1,
-                    controller: _titleController,
-                    decoration: const InputDecoration(
-                      labelText: "Name",
-                      border: OutlineInputBorder(),
-                    ),
-                  ),
-                ),
-                CupertinoFormRow(
-                  helper: null,
-                  padding: const EdgeInsets.symmetric(vertical: 8),
-                  child: TextFormField(
-                    maxLines: 1,
-                    controller: _titleController,
-                    decoration: const InputDecoration(
-                      labelText: "Email",
-                      border: OutlineInputBorder(),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            Container(
-              margin: const EdgeInsets.only(top: 32),
-              child: CupertinoButton(
-                onPressed: canSendFeedback ? sendFeedback : null,
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 13),
-                color: CupertinoTheme.of(context).primaryColor,
-                disabledColor:
-                    CupertinoTheme.of(context).primaryColor.withAlpha(100),
-                borderRadius: BorderRadius.circular(10),
-                pressedOpacity: 0.7,
-                child: Text(
-                  "Send",
-                  style: TextStyle(
-                    color: canSendFeedback
-                        ? const Color.fromARGB(255, 255, 255, 255)
-                        : const Color.fromARGB(100, 255, 255, 255),
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
+                ],
               ),
-            )
-          ],
+              CupertinoFormSection.insetGrouped(
+                margin: const EdgeInsets.fromLTRB(16, 16, 16, 0),
+                children: [
+                  CupertinoFormRow(
+                    helper: null,
+                    padding: const EdgeInsets.symmetric(vertical: 8),
+                    child: TextFormField(
+                      maxLines: 5,
+                      controller: _whatHappenedController,
+                      decoration: const InputDecoration(
+                        labelText: "What Happened",
+                        border: OutlineInputBorder(),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              CupertinoFormSection.insetGrouped(
+                margin: const EdgeInsets.fromLTRB(16, 16, 16, 0),
+                children: [
+                  CupertinoFormRow(
+                    helper: null,
+                    padding: const EdgeInsets.symmetric(vertical: 8),
+                    child: TextFormField(
+                      maxLines: 1,
+                      controller: _nameController,
+                      decoration: const InputDecoration(
+                        labelText: "Name",
+                        border: OutlineInputBorder(),
+                      ),
+                    ),
+                  ),
+                  CupertinoFormRow(
+                    helper: null,
+                    padding: const EdgeInsets.symmetric(vertical: 8),
+                    child: TextFormField(
+                      maxLines: 1,
+                      controller: _emailController,
+                      decoration: const InputDecoration(
+                        labelText: "Email",
+                        border: OutlineInputBorder(),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              Container(
+                margin: const EdgeInsets.only(top: 32),
+                child: CupertinoButton(
+                  onPressed: canSendFeedback ? sendFeedback : null,
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 13),
+                  color: CupertinoTheme.of(context).primaryColor,
+                  disabledColor:
+                      CupertinoTheme.of(context).primaryColor.withAlpha(100),
+                  borderRadius: BorderRadius.circular(10),
+                  pressedOpacity: 0.7,
+                  child: Text(
+                    "Send",
+                    style: TextStyle(
+                      color: canSendFeedback
+                          ? const Color.fromARGB(255, 255, 255, 255)
+                          : const Color.fromARGB(100, 255, 255, 255),
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

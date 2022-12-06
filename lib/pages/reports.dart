@@ -165,7 +165,7 @@ class _ReportsContent extends State<ReportsContent> {
                             child: Row(
                               children: [
                                 const Text(
-                                  "USD ",
+                                  "INR ",
                                   style: TextStyle(
                                     color: CupertinoColors.inactiveGray,
                                   ),
@@ -193,7 +193,7 @@ class _ReportsContent extends State<ReportsContent> {
                             child: Row(
                               children: [
                                 const Text(
-                                  "USD ",
+                                  "INR ",
                                   style: TextStyle(
                                     color: CupertinoColors.inactiveGray,
                                   ),
