@@ -7,6 +7,7 @@ import './pages/settings.dart';
 
 
 class Navigation extends StatefulWidget {
+
   const Navigation({Key? key}) : super(key: key);
 
   @override
