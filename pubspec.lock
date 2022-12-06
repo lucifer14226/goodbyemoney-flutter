@@ -336,21 +336,11 @@ packages:
     source: sdk
     version: "0.0.0"
   flutter_native_splash:
-    dependency: "direct dev"
-    description:
-      name: flutter_native_splash
-      url: "https://pub.dartlang.org"
-    source: hosted
-<<<<<<< HEAD
-    version: "2.0.1"
-  flutter_native_splash:
     dependency: "direct main"
     description:
       name: flutter_native_splash
       url: "https://pub.dartlang.org"
     source: hosted
-=======
->>>>>>> cfbae026ffc3273678fafbe25de0820f7010bfc4
     version: "2.2.16"
   flutter_test:
     dependency: "direct dev"
@@ -737,11 +727,7 @@ packages:
       name: win32
       url: "https://pub.dartlang.org"
     source: hosted
-<<<<<<< HEAD
-    version: "3.1.1"
-=======
     version: "3.1.2"
->>>>>>> cfbae026ffc3273678fafbe25de0820f7010bfc4
   xml:
     dependency: transitive
     description:
