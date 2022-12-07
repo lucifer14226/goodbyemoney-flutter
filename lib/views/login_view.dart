@@ -1,5 +1,4 @@
 import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:goodbye_money/Exception/exception.dart';
 import 'package:goodbye_money/auth/auth_servicces.dart';

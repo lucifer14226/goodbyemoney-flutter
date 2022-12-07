@@ -4,7 +4,6 @@ import 'package:goodbye_money/views/register_view.dart';
 import 'package:goodbye_money/views/verify_email_view.dart';
 import 'package:sentry_flutter/sentry_flutter.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:goodbye_money/tabs.dart';
 
 Future<void> main() async {
@@ -16,6 +15,7 @@ Future<void> main() async {
       options.attachScreenshot = true,
     },
     appRunner: () => runApp(const MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: MyApp(),
     )),
   );
@@ -34,12 +34,12 @@ class MyApp extends StatelessWidget {
           primaryColor: const Color.fromARGB(255, 41, 141, 255),
           brightness: Brightness.dark),
       routes: {
-        loginRoutes: (context) => const LoginView(),
-        verifyemail: (context) => const VerifyEmailView(),
-        registerRoutes: (context) => const RegisterView(),
-        tabRoute: (context) => const Navigation()
+        loginRoutes: (context) => LoginView(),
+        verifyemail: (context) => VerifyEmailView(),
+        registerRoutes: (context) => RegisterView(),
+        tabRoute: (context) => Navigation()
       },
-      home: const LoginView(),
+      home: LoginView(),
     );
   }
 }
